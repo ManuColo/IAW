@@ -1,0 +1,23 @@
+<div class="content">
+
+	<!-- LIST OF FILES -->
+	<div class="row justify-content-md-center">
+		<ul class="list-group">
+			<li class="list-group-item list-group-item-action" *ngFor="let file of fileList; let idx = index" >
+				      <span>{{file.name}}</span>
+				      <span class="badge">{{file.creationDate | date}}</span>
+				      <div class="pull-right">
+				          <button class="btn btn-primary btn-xs fa fa-pencil" [routerLink]="['/modify', idx]"></button>
+				          <button class="btn btn-danger btn-xs fa fa-trash-o" (click)="onRemove(file)"></button>
+				      </div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- NEW FILE -->
+	<div class="row justify-content-md-center">
+		<nav>
+			<a routerLink="/new-file" class="pull-right">New file</a>
+		</nav>
+	</div>
+</div>
