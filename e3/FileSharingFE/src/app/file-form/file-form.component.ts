@@ -31,10 +31,14 @@ export class FileFormComponent implements OnInit {
     }
   }
 
-  async onSubmit(){
+  onSubmit(){
     this.submitted = true;
     if(this.idx==-1){
-      await this.service.fileControllerCreate(this.model).subscribe(()=>console.log("Archivo creado"));
+      this.service.fileControllerCreate(this.model).subscribe();
+    } else {
+      if (this.model.id){
+        this.service.fileControllerUpdateById(this.model.id,this.model).subscribe()
+      }
     }
   }
   

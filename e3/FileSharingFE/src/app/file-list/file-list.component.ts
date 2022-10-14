@@ -26,7 +26,15 @@ export class FileListComponent implements OnInit {
 
   onRemove(aFile:ModelFile){
     if(aFile.id){
-      this.service.fileControllerDeleteById(aFile.id)
+      this.service.fileControllerDeleteById(aFile.id).subscribe(()=>{
+        this.loadList()
+      })
     }
+  }
+
+  loadList(){
+    this.service.fileControllerFind().subscribe((lista)=>{
+      this.fileList=lista
+    })
   }
 }
