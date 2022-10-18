@@ -1,0 +1,36 @@
+<div class="container">
+    <div [hidden]="submitted">
+      <h1>New user</h1>
+      <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" required [(ngModel)]="model.username" name="username"  #name="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name"  #name="ngModel">
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger"> Name is required </div>
+        </div>
+        <div class="form-group">
+          <label for="lastname">Lastname</label>
+          <input type="text" class="form-control" id="lastname" required [(ngModel)]="model.lastname" name="lastname"  #name="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="name">Password</label>
+          <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password"  #name="ngModel">
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+        <button type="button" class="btn btn-default" (click)="newUser(); heroForm.reset()">Clear</button>
+      </form>
+    </div>
+    <div [hidden]="!submitted">
+      <h2>You submitted the following:</h2>
+      <div class="row">
+        <div class="col-xs-3">Name</div>
+        <div class="col-xs-9">{{ model.name }}</div>
+      </div>
+      <a routerLink="/users" > List of users</a>
+      <br>
+      <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+    </div>
+</div>

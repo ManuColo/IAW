@@ -17,8 +17,8 @@ import { FileWithRelations } from './fileWithRelations';
  */
 export interface UserWithRelations { 
     username: string;
-    Name: string;
-    Lastname: string;
+    name: string;
+    lastname: string;
     id?: string;
     password: string;
     files?: Array<FileWithRelations>;

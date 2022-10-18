@@ -13,8 +13,8 @@
 
 export interface UserFieldsOneOf { 
     username?: boolean;
-    Name?: boolean;
-    Lastname?: boolean;
+    name?: boolean;
+    lastname?: boolean;
     id?: boolean;
     password?: boolean;
 }

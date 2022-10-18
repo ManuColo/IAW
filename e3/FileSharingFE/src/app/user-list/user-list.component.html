@@ -1,0 +1,22 @@
+<div class="content">
+
+	<!-- LIST OF USERS -->
+	<div class="row justify-content-md-center">
+		<ul class="list-group">
+			<li class="list-group-item list-group-item-action" *ngFor="let user of userList; let idx = index" >
+				      <span>{{user.name}}</span>
+				      <div class="pull-right">
+				          <button class="btn btn-primary btn-xs fa fa-pencil" [routerLink]="['/edit-user', idx]"></button>
+				          <button class="btn btn-danger btn-xs fa fa-trash-o" (click)="onRemove(user)"></button>
+				      </div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- NEW USER -->
+	<div class="row justify-content-md-center">
+		<nav>
+			<a routerLink="/new-user" class="pull-right">New user</a>
+		</nav>
+	</div>
+</div>

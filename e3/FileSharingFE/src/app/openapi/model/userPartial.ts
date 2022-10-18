@@ -16,8 +16,8 @@
  */
 export interface UserPartial { 
     username?: string;
-    Name?: string;
-    Lastname?: string;
+    name?: string;
+    lastname?: string;
     id?: string;
     password?: string;
 }

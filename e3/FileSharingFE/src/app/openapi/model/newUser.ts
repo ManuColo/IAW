@@ -16,8 +16,8 @@
  */
 export interface NewUser { 
     username: string;
-    Name: string;
-    Lastname: string;
+    name: string;
+    lastname: string;
     password: string;
 }
 
